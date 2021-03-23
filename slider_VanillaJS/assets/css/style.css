@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body,html{
+    height: 100%;
+    background-color: #4D4D4D;
+}
+
+h1{
+    font-size: 2rem;
+    max-width: 480px;
+    text-align: center;
+    margin: 40px auto;
+    font-family: 'Courier New', Courier, monospace;
+    color: gold;
+    
+}
+
+h1::after{
+    content: '|';
+    color: white;
+    margin-left: .2rem;
+    opacity: 1;
+    animation: blink .7s infinite;
+}
+
+@keyframes blink{
+    0%, 100%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+}
+
+.carousel{
+    position: relative;
+    width: 70%;
+    height: 35.5rem;
+    margin: 0 auto;
+}
+
+.carousel_track-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel_track{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    position: relative;
+    transition: transform 250ms ease-in;
+}
+
+.carousel_slide{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.carousel_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.is_hidden{
+    display: none;
+}
+
+#left-triangle{
+    margin-right: .5rem;
+    width: 0;
+    height: 0;
+    border-bottom: 1.5rem solid transparent;
+    border-top: 1.5rem solid transparent;
+    border-right: 1.5rem solid #949396;
+    cursor: pointer;
+    position: absolute;
+    top: 65%;
+    right: 100%;
+}
+
+#right-triangle{
+    margin-left: .5rem;
+    width: 0;
+    height: 0;
+    border-bottom: 1.5rem solid transparent;
+    border-top: 1.5rem solid transparent;
+    border-left: 1.5rem solid #949396;
+    cursor: pointer;
+    position: absolute;
+    top: 65%;
+    left: 100%;
+}
+
+.carousel_nav{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: .1rem 1rem;
+}
+
+.carousel_indicator{
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 1rem;
+    border: none;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    margin: 0 .8rem;
+    cursor: pointer;
+}
+
+.carousel_indicator.current_slide{
+    background-color: rgba(0, 0, 0, .75);
+}
+
+@media (max-width: 800px){
+    .carousel{
+        position: relative;
+        width: 70%;
+        height: 20rem;
+        margin: 0 auto;
+    }
+    .carousel_image{
+        margin-top: 15%;
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+    }
+}
